@@ -1,3 +1,13 @@
+# dp adapter 内容
+
+在生成的代码文件中，自动加上屏幕适配代码和相关文件导入。
+
+屏幕适配机制利用 Dart 2.7 版本开始支持的扩展属性功能，给生成的尺寸添加 dp 属性。
+
+自行在代码实现 dp 原理或参照 [xd-to-flutter-demo](https://github.com/joyin5344/xd-to-flutter-demo) 即可立即使用。
+
+---
+
 # XD to Flutter Plugin
 
 ## READ THIS FIRST
