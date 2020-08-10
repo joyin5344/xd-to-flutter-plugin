@@ -34,7 +34,7 @@ class Blend extends AbstractDecorator {
 			// TODO: GS: Test with responsive layout.
 			let lx = $.fix(bounds.x), ly = $.fix(bounds.y);
 			let lw = $.fix(bounds.width), lh = $.fix(bounds.height);
-			region = `region: Offset(${lx}, ${ly}) & Size(${lw}, ${lh}), `;
+			region = `region: Offset(${lx}.dp, ${ly}.dp) & Size(${lw}.dp, ${lh}.dp), `;
 		}
 
 		let str = "BlendMask(" +

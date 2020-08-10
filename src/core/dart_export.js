@@ -133,7 +133,7 @@ async function exportColors(ctx) {
 	if (!entries) { return; }
 	let lists = {}, usedNames = {}, names = [];
 	let className = $.cleanVarName(NodeUtils.getProp(xd.root, PropType.COLORS_CLASS_NAME)) || 'XDColors';
-	let str = `import 'package:flutter/material.dart';\n\nclass ${className} {\n`;
+	let str = `import 'package:flutter/material.dart';\nimport 'package:adobe_xd_dp_adapter/dp_adapter.dart';\n\nclass ${className} {\n`;
 	for (let i=0, l=entries.length; i<l; i++) {
 		let asset = entries[i], name = $.cleanVarName(asset.name);
 		if (!name) { continue; }
@@ -191,7 +191,7 @@ async function exportCharStyles(ctx) {
 	if (!entries || entries.length === 0) { return; }
 	let usedNames = {}, names = [];
 	let className = $.cleanVarName(NodeUtils.getProp(xd.root, PropType.CHAR_STYLES_CLASS_NAME)) || 'XDTextStyles';
-	let str = `import 'package:flutter/material.dart';\n\nclass ${className} {\n`;
+	let str = `import 'package:flutter/material.dart';\nimport 'package:adobe_xd_dp_adapter/dp_adapter.dart';\n\nclass ${className} {\n`;
 	for (let i=0, l=entries.length; i<l; i++) {
 		let asset = entries[i], name = $.cleanVarName(asset.name);
 		if (!name) { continue; }

@@ -97,7 +97,7 @@ class AbstractWidget extends AbstractNode {
 	}
 
 	_getImportListString(ctx) {
-		let str = "import 'package:flutter/material.dart';\n";
+		let str = "import 'package:flutter/material.dart';\nimport 'package:adobe_xd_dp_adapter/dp_adapter.dart';\n";
 		let imports = this._imports;
 		for (let n in imports) {
 			let o = imports[n];

@@ -73,7 +73,7 @@ class Text extends AbstractNode {
 		} else if (o.textAlign !== xd.Text.ALIGN_LEFT) {
 			// To keep it aligned we need a width, with a touch of padding to minimize differences in rendering.
 			let w = $.fix(this.adjustedBounds.width, 0);
-			str = `SizedBox(width: ${w}, child: ${str},)`;
+			str = `SizedBox(width: ${w}.dp, child: ${str},)`;
 		}
 
 		return str;
@@ -206,7 +206,7 @@ function _getFontFamily(o) {
 }
 
 function _getFontSizeParam(o) {
-	return `fontSize: ${o.fontSize}, `;
+	return `fontSize: ${o.fontSize}.dp, `;
 }
 
 function _getColorParam(o, fill) {
@@ -258,7 +258,7 @@ function _getHeightParam(o) {
 	// XD reports a lineSpacing of 0 to indicate default spacing.
 	// Flutter uses a multiplier against the font size for its "height" value.
 	// XD uses a pixel value.
-	return (o.lineSpacing === 0 ? "" : `height: ${o.lineSpacing / o.fontSize}, `);
+	return (o.lineSpacing === 0 ? "" : `height: ${o.lineSpacing / o.fontSize}.dp, `);
 }
 
 function _getShadowsParam(xdNode) {
@@ -269,7 +269,7 @@ function _getShadowsParam(xdNode) {
 function _getShadow(shadow) {
 	let o = shadow;
 	return `Shadow(color: ${getColor(o.color)}, ` +
-		(o.x || o.y ? `offset: Offset(${o.x}, ${o.y}), ` : "") +
+		(o.x || o.y ? `offset: Offset(${o.x}.dp, ${o.y}.dp), ` : "") +
 		(o.blur ? `blurRadius: ${o.blur}, ` : "") +
 	")";
 }

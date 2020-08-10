@@ -38,8 +38,8 @@ class Layout extends AbstractDecorator {
 		let vPos = vConstraints.position, vSize = vConstraints.size;
 
 		return "Pinned.fromSize(" +
-			`bounds: Rect.fromLTWH(${$.fix(bounds.x)}, ${$.fix(bounds.y)}, ${$.fix(bounds.width)}, ${$.fix(bounds.height)}), ` +
-			`size: Size(${$.fix(size.width)}, ${$.fix(size.height)}), ` +
+			`bounds: Rect.fromLTWH(${$.fix(bounds.x)}.dp, ${$.fix(bounds.y)}.dp, ${$.fix(bounds.width)}.dp, ${$.fix(bounds.height)}.dp), ` +
+			`size: Size(${$.fix(size.width)}.dp, ${$.fix(size.height)}.dp), ` +
 			(hPos === C.FIXED_LEFT || hPos === C.FIXED_BOTH ? "pinLeft: true, " : "") +
 			(hPos === C.FIXED_RIGHT || hPos === C.FIXED_BOTH ? "pinRight: true, " : "") +
 			(vPos === C.FIXED_TOP || vPos === C.FIXED_BOTH ? "pinTop: true, " : "") +
@@ -56,7 +56,7 @@ class Layout extends AbstractDecorator {
 		let xStr = $.fix(bounds.x), yStr = $.fix(bounds.y);
 		if (xStr === "0.0" && yStr === "0.0") { return nodeStr; }
 		return "Transform.translate(" +
-			`offset: Offset(${$.fix(bounds.x)}, ${$.fix(bounds.y)}), ` +
+			`offset: Offset(${$.fix(bounds.x)}.dp, ${$.fix(bounds.y)}.dp), ` +
 			`child: ${nodeStr},` +
 		")";
 	}

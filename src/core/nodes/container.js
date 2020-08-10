@@ -52,7 +52,7 @@ class Container extends AbstractNode {
 		let o = this.xdNode, isRect = this.isRect;
 		let w = $.fix(isRect ? o.width : o.radiusX * 2);
 		let h = $.fix(isRect ? o.height : o.radiusY * 2);
-		return `width: ${w}, height: ${h}, `;
+		return `width: ${w}.dp, height: ${h}.dp, `;
 	}
 
 	/** BOXDECORATION */
@@ -125,7 +125,7 @@ class Container extends AbstractNode {
 			ctx.log.warn('Dashed lines are not supported on rectangles & ellipses.', xdNode);
 		}
 		let color = xdNode.stroke && ExportUtils.getColor(xdNode.stroke, NodeUtils.getOpacity(xdNode));
-		return color ? `border: Border.all(width: ${$.fix(xdNode.strokeWidth, 2)}, color: ${color}), ` : "";
+		return color ? `border: Border.all(width: ${$.fix(xdNode.strokeWidth, 2)}.dp, color: ${color}), ` : "";
 	}
 
 	/** BORDERRADIUS */
@@ -162,7 +162,7 @@ class Container extends AbstractNode {
 
 	_getRadiusParam(param, value) {
 		if (value <= 1) { return ''; }
-		return `${param}: Radius.circular(${$.fix(value, 2)}), `;
+		return `${param}: Radius.circular(${$.fix(value, 2)}.dp), `;
 	}
 
 
@@ -172,7 +172,7 @@ class Container extends AbstractNode {
 		if (!s || !s.visible) { return ""; }
 		return "boxShadow: [BoxShadow(" +
 			`color: ${ExportUtils.getColor(s.color, NodeUtils.getOpacity(xdNode))}, ` +
-			`offset: Offset(${s.x}, ${s.y}), ` +
+			`offset: Offset(${s.x}.dp, ${s.y}.dp), ` +
 			`blurRadius: ${s.blur}, ` +
 		"), ], ";
 	}

@@ -28,7 +28,7 @@ class Artboard extends AbstractWidget {
 	get adjustedBounds() {
 		// we don't want the artboard's position in the document.
 		let xdNode = this.xdNode;
-		return {x: 0, y: 0, width: xdNode.width, height: xdNode.height};
+		return {x: 0, y: 0, width: xdNode.width.dp, height: xdNode.height.dp};
 	}
 
 	_serializeWidgetBody(ctx) {

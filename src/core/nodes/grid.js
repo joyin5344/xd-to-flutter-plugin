@@ -79,12 +79,12 @@ class Grid extends AbstractNode {
 		if (!itemIsResponsive) {
 			return `SingleChildScrollView(child: Wrap(` +
 				'alignment: WrapAlignment.center, ' +
-				`spacing: ${xSpacing}, runSpacing: ${ySpacing}, ` +
+				`spacing: ${xSpacing}.dp, runSpacing: ${ySpacing}.dp, ` +
 				`children: [${childDataStr}].map((map) { ${paramVarStr} return ${itemStr}; }).toList(),` +
 			'), )';
 		}
 		return `GridView.count(` +
-			`mainAxisSpacing: ${ySpacing}, crossAxisSpacing: ${xSpacing}, ` +
+			`mainAxisSpacing: ${ySpacing}.dp, crossAxisSpacing: ${xSpacing}.dp, ` +
 			`crossAxisCount: ${colCount}, ` +
 			`childAspectRatio: ${aspectRatio}, ` +
 			`children: [${childDataStr}].map((map) { ${paramVarStr} return ${itemStr}; }).toList(),` +
